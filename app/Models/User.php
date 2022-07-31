@@ -21,6 +21,7 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'current_tenant_id',
 
     ];
 
@@ -43,13 +44,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-   /* public function  todos(){
+    public function  todos(){
         return $this->hasMany(Todo::class);
-    }*/
+    }
 
-    //protected $guarded = [];
-
-    public function teams(){
-        return $this->BelongsToMany(Teams::class);
+    public function  tenants(){
+        return $this->belongsToMany(Tenant::class);
     }
 }

@@ -18,7 +18,8 @@ class Todo extends Model
 
     protected $guarded = [];
 
-    public function teams(){
-        return $this->BelongsToMany(Teams::class);
+    public function user()
+    {
+        return $this->BelongsTo(User::class);
     }
 }

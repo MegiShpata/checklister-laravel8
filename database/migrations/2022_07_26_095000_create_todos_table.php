@@ -18,8 +18,8 @@ class CreateTodosTable extends Migration
             $table->string('title');
             $table->mediumText('description')->nullable();
             $table->boolean('completed')->default(false);
-            //$table->unsignedInteger('user_id');
-            //$table->foreign('teams_id')->references('id')->on('teams')->onDelete('cascade');//kur nje row fshihet ai fshin te gjitha referencat dhe datat  attached
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');//kur nje row fshihet ai fshin te gjitha referencat dhe datat  attached
             $table->timestamps();
         });
     }
