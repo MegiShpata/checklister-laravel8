@@ -14,8 +14,8 @@ class CreateTenantUserTable extends Migration
     public function up()
     {
         Schema::create('tenant_user', function (Blueprint $table) {
-            $table->foreignId('tenant_id')->constrained();
-            $table->foreignId('user_id')->constrained();
+            $table->integer('tenant_id')->references('id')->on('tenants');
+            $table->integer('user_id')->references('id')->on('users');
         });
     }
 
