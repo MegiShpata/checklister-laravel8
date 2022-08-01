@@ -65,7 +65,7 @@ class RegisterController extends Controller
 
         $tenant = Tenant::create(['name'=>$request->name . 'Team']);
         $tenant->users()->attach($user->id);
-        //$user->update(['current_tenant_id' => $tenant->id]);
+        $user->update(['current_tenant_id' => $tenant->id]);
 
 
         Auth::login($user);
