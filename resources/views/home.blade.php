@@ -6,7 +6,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Dashboard Task') }}</div>
-               <h5 class="cart-header">
+               <h5 class="cart-header" style="margin-left: 20px">
                    <br>
                    <a href="{{route('todo.create')}}" class="btn btn-sm btn-outline-primary">Add Task</a>
                </h5>
@@ -46,6 +46,12 @@
                                     <a href="{{route('todo.edit', $todo->id)}}" class="btn btn-sm btn-outline-success">Edit</a>
                                     <a href="{{route('todo.show', $todo->id)}}" class="btn btn-sm btn-outline-danger">Delete</a>
                                 </td>
+                                <td> Created :{{$todo->created_at}}</td>
+                                    @if($todo->completed)
+                                <td>
+                                    Completed :{{$todo->updated_at}}</td>
+                                </td>
+                                    @endif
                             </tr>
                                 @empty
                             <tr>

@@ -40,6 +40,7 @@
                                         <a href="{{route('user.edit', $user->id)}}" class="btn btn-sm btn-outline-success">Edit</a>
                                         <a href="{{route('user.show', $user->id)}}" class="btn btn-sm btn-outline-danger">Delete</a>
                                     </td>
+
                                 </tr>
                             @empty
                                 <tr>

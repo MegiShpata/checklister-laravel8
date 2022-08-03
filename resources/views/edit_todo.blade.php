@@ -6,7 +6,7 @@
             <div class="col-md-8">
                 <div class="card">
                     <div class="card-header">Edit {{$todo->title}}</div>
-                    <h5 class="cart-header">
+                    <h5 class="cart-header" style="margin-left: 20px">
                         <br>
                         <a href="{{route('todo.index')}}" class="btn btn-sm btn-outline-primary">Go Back</a>
                     </h5>
