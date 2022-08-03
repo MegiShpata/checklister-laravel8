@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\UserCRUDController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,3 +23,9 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 //Route::get('/demo', [App\Http\Controllers\TodosController::class, 'index'])->name('demo');
 Route::resource('todo', 'App\Http\Controllers\TodosController');
+
+Route::resource('user', 'App\Http\Controllers\UserCRUDController');
+
+//Route::resource('user', UserCRUDController::class);
+
+Route::get('tenants/change/{tenantID}', [App\Http\Controllers\TenantController::class, 'changeTenant'])->name('tenant.change');

@@ -70,6 +70,9 @@ class TodosController extends Controller
     public function show($id)
     {
         $todo = Todo::where('id', $id)->where('user_id', Auth::user()->id)->first();
+        if(!$todo){
+            abort(404);
+        }
         return view("delete_todo",compact('todo'));
     }
 
@@ -82,6 +85,9 @@ class TodosController extends Controller
     public function edit($id)
     {
         $todo = Todo::where('id', $id)->where('user_id', Auth::user()->id)->first();
+        if(!$todo){
+            abort(404);
+        }
         return view("edit_todo",compact('todo'));
     }
 

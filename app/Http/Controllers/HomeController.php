@@ -26,5 +26,11 @@ class HomeController extends Controller
     {
 
         return redirect()->route('todo.index');
+        //$todos = Todo::where('user_id', Auth::user()->id)->orderBy('created_at','desc')->get();
+        //return view('home', compact('todos'));
+
+        //$users = User::orderBy('id','desc')->paginate(5);
+        //return view('user_crud_index', compact('users'));
+
     }
 }

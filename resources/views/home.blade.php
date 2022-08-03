@@ -5,7 +5,7 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Dashboard') }}</div>
+                <div class="card-header">{{ __('Dashboard Task') }}</div>
                <h5 class="cart-header">
                    <br>
                    <a href="{{route('todo.create')}}" class="btn btn-sm btn-outline-primary">Add Task</a>
@@ -47,17 +47,14 @@
                                     <a href="{{route('todo.show', $todo->id)}}" class="btn btn-sm btn-outline-danger">Delete</a>
                                 </td>
                             </tr>
-                        @empty
+                                @empty
                             <tr>
                                 <td>No Task</td>
                             </tr>
                         @endforelse
-
                         </tbody>
                     </table>
-
-
-
+                        Want to Update users? <a href="{{route('user.index')}}">here</a>
                 </div>
             </div>
         </div>
