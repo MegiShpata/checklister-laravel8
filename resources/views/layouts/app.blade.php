@@ -58,16 +58,19 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    @if (auth()->user()->tenants()->count()  > 1)
-                                        @foreach(auth()->user()->tenants as $tenants)
 
-                                            <a  class="@if (auth()->user()->current_tenant_id == $tenant->id)  font-bold @endif
-                                        block px-4 py-2 text-sm leading-5 text-gray-700 hover: bg-gray-100 focus:outline-none transition duration-150 ese-in-out">
-                                                {{$tenant->name}}
-                                            </a>
+{{--                                  @if (auth()->user()->tenants()->count()  > 1)--}}
+{{--                                        @foreach(auth()->user()->tenants as $tenants)--}}
 
-                                        @endforeach
-                                    @endif
+{{--                                            <a  class="@if (auth()->user()->current_tenant_id == $tenant->id)  font-bold @endif--}}
+{{--                                        block px-4 py-2 text-sm leading-5 text-gray-700 hover: bg-gray-100 focus:outline-none transition duration-150 ese-in-out">--}}
+{{--                                                {{$tenant->name}}--}}
+{{--                                            </a>--}}
+{{--                                        @endforeach--}}
+{{--                                    @endif--}}
+
+
+
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

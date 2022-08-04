@@ -12,6 +12,6 @@ class TenantController extends Controller
 
         auth()->user()->update(['current_tenant_id' =>$tenantID]);//change
 
-       // return redirect()->route('');
+       //return redirect()->route('dashboard');
     }
 }

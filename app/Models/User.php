@@ -25,6 +25,8 @@ class User extends Authenticatable
 
     ];
 
+
+
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -50,5 +52,10 @@ class User extends Authenticatable
 
     public function  tenants(){
         return $this->belongsToMany(Tenant::class);
+
     }
+
+
 }
+
+

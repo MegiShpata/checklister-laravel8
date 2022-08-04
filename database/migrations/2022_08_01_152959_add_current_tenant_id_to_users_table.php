@@ -14,7 +14,12 @@ class AddCurrentTenantIdToUsersTable extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->foreignId('current_tenant_id')->nullable()->references('id')->on('tenants');
+            //$table->unsignedInteger('current_tenant_id');
+            //$table->foreign('current_tenant_id')->nullable()->references('id')->on('tenants');
+
+            $table->unsignedBigInteger('current_tenant_id')->nullable();
+
+            $table->foreign('current_tenant_id')->references('id')->on('tenants');
         });
     }
 
@@ -26,6 +31,8 @@ class AddCurrentTenantIdToUsersTable extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
+            $table->dropForeign('users_current_tenant_id_foreign');
+            $table->dropColumn('current_tenant_id');
         });
     }
 }
