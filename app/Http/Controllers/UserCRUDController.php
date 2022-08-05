@@ -15,7 +15,7 @@ class UserCRUDController extends Controller
      */
     public function index()
     {
-        $users = User::orderBy('id','desc')->paginate(5);
+        $users = User::orderBy('id','desc')->paginate(10);
         return view('user_crud_index', compact('users'));
     }
 

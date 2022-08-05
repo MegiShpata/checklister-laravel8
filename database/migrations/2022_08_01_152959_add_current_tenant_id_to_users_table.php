@@ -15,8 +15,9 @@ class AddCurrentTenantIdToUsersTable extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
             $table->unsignedBigInteger('current_tenant_id')->nullable();
-
             $table->foreign('current_tenant_id')->references('id')->on('tenants');
+
+
         });
     }
 

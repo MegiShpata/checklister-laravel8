@@ -64,7 +64,7 @@
 
                                     @foreach(auth()->user()->tenants as $tenants)
 
-                                        <a href=""{{ route('home') }}"" class="dropdown-item">
+                                        <a href="{{ route('todo.index') }}" class="dropdown-item">
                                             Team{{ Auth::user()->current_tenant_id}}
                                         </a>
                                     @endforeach
